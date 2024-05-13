@@ -1,0 +1,135 @@
+*{ 
+    /* removes default styling */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*helps with setting a height and width of an element that includes the padding and border */
+}
+
+body{
+    font-family: 'Inter', sans-serif, FontAwesome;
+    background-color: #e1e8eb;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.background{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    background-image: linear-gradient(#145dbc,#145dbc);
+    height: 154px;
+   
+}
+
+/* HEADER BEGINS */
+.container__header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.logo__icon{
+    
+}
+
+.logo__title{
+    margin-left: 10px;
+    
+}
+
+.logo__title--bold{
+    font-weight: bold;
+}
+
+.logo__title--bookmarks{
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.logo__icon--caretDown{
+
+}
+
+.container__header--search{
+    width: 500px;
+    padding: 10px 20px;
+    border-radius: 10px; /* its giving a bolded effect on the top and left of the search box */
+
+}
+
+/* HEADER ENDS */
+
+/* MAIN LEFT - 1 */
+.jobList{
+
+}
+
+.jobList__results{
+
+}
+
+.jobList__results--results{
+
+}
+
+.jobList__sort{
+
+}
+
+.jobList__sort--relevant{
+
+}
+
+.jobList__sort--recent{
+
+}
+
+/* MAIN LEFT - 2 */
+.jobList__jobs{
+
+}
+
+.jobList__jobs--list{
+
+}
+
+.jobList__jobs--listItem{
+
+}
+
+/* MAIN LEFT - 3 */
+
+.jobList__pagination{
+
+}
+
+.jobList__pagination--button{
+
+}
+
+/* MAIN RIGHT */
+.jobDetails{
+
+}
+
+.jobDetails__defaultHeading{
+
+}
+
+.jobDetails__defaultText{
+
+}
+
+.footer{
+
+}
+
