@@ -1,5 +1,6 @@
 const searchInputEl = document.querySelector('.container__header--search');
 const jobList = document.querySelector('.jobList__jobs--list');
+const jobListItem = document.querySelector('.jobList__jobs--jobItem'); 
 
 //Search for jobs and display only searched jobs
 //get job data from API
@@ -77,6 +78,13 @@ searchInputEl.addEventListener("input", () =>{
 
 // END OF SEARCH
 
+jobList.addEventListener('click', function(event) {
+    console.log(event.target);
+})
+
+// jobListItem.addEventListener('click', function(event) {
+//     console.log(event.target);
+// })
 
 // //fetch job items data from api and display on console
 // let dataToSearch = fetch('https://bytegrad.com/course-assets/js/2/api/jobs')
