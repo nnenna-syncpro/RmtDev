@@ -241,6 +241,10 @@ body{
     align-items: center;
 }
 
+.jobDetails__default{
+    display: none;
+}
+
 .jobDetails__defaultHeading{
     font-weight: bold;
     font-size: 20px;
@@ -252,6 +256,92 @@ body{
     width: 300px;
     text-align: center;
     text-wrap: wrap;
+}
+
+/* Job Details populated begins */
+.jobDetails__populated{
+
+}
+/* HEADER */
+.jobDetails__populated--header{
+
+}
+.jobDetails__backgroundImage{
+    /* sames as background with search bar */
+}
+.jobDetails__badge{
+
+}
+.jobDetails__title{
+
+}
+.jobDetails__company{
+
+}
+
+/* INTRO */
+.jobDetails__populated--intro{
+
+}
+
+.jobDetails__intro--daysAgo{
+
+}
+.jobDetails__intro--bookmark{
+
+}
+.jobDetails__intro--bookmarkIcon{
+
+}
+.jobDetails__specs{
+
+}
+.jobDetails__specs--description{
+
+}
+.jobDetails__specsIcons{
+
+}
+/* havent listed out all icon related classes */
+
+/* QUALIFICATIONS */
+.jobDetails__qualifications{
+
+}
+.jobDetails__qualifications--placeholder{
+    
+}
+.jobDetails__qualifications--title{
+
+}
+.jobDetails__qualifications-text{
+
+}
+.jobDetails__qualifications--list{
+
+}
+.jobDetails__qualifications--listItem{
+
+}
+
+/* REVIEWS */
+.jobDetails__reviews{
+
+}
+.jobDetails__reviews--placeholder{
+
+}
+.jobDetails__reviews--title{
+
+}
+.jobDetails__reviews-text{
+
+}
+.jobDetails__reviews--list{
+
+}
+.jobDetails__reviews--listItem{
+
 }
 
 .footer{
