@@ -79,7 +79,7 @@ body{
     overflow: hidden;
 }
 .jobList{
-    flex: 1;
+    flex: 1.1;
 }
 
 .jobList__results{
@@ -126,10 +126,93 @@ body{
 
 }
 
-.jobList__jobs--listItem{
+.jobList__jobs--jobItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    box-shadow: 0 0px 1.5px rgba(0,0,0,0.1);
+}
+
+/* Job item details begin */
+.jobItem__badge{
+    background-color: #008E9B;
+    color: black;
+    padding: 10px 10px;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 15px;
+    font-weight: bold;
+}
+
+.jobItem__details{
+    display: flex;
+    flex-direction: column;
+}
+
+.jobItem__title{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.jobItem__company{
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.jobItem__specs{
+    font-size: 12px;
+    /* opacity: 1; */
+    margin-top: 5px;
+}
+
+.jobItem__specs--duration{
+    margin-right: 10px;
+}
+
+.jobItem__specs--durationIcon{
+    color: darkgray;
+}
+
+.jobItem__specs--salary{
+    margin-right: 10px;
+}
+
+.jobItem__specs--salaryIcon{
+    color: darkgray;
+}
+
+.jobItem__specs--location{
 
 }
 
+.jobItem__specs--locationIcon{
+    color: darkgray;
+}
+
+.jobItem__post{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.jobItem__post--bookmark{
+
+}
+
+.jobItem__post--bookmarkIcon{
+    color: darkgray;
+}
+
+.jobItem__post--daysAgo{
+    font-size: 13px;
+    opacity: 0.9;
+    text-align: center;
+    margin-top: 5px;
+}
+/* Job item details begin */
 /* MAIN LEFT - 3 */
 
 .jobList__pagination{
