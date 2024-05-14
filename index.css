@@ -120,6 +120,7 @@ body{
 /* MAIN LEFT - 2 */
 .jobList__jobs{
     height: 424px;
+    overflow-y: auto;
 }
 
 .jobList__jobs--list{
