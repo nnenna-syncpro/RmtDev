@@ -1,4 +1,5 @@
 const searchInputEl = document.querySelector('.container__header--search');
+//jobList === paginatedList
 const jobList = document.querySelector('.jobList__jobs--list');
 const jobListItem = document.querySelector('.jobList__jobs--jobItem'); 
 
@@ -10,6 +11,12 @@ const sortEl = document.querySelector('.jobList__sort');
 const sortRelevantButtonEl = document.querySelector('.jobList__sort--relevant'); 
 const sortRecentButtonEl = document.querySelector('.jobList__sort--recent'); 
 
+const paginationNumbers = document.querySelector('.jobList__pagination--number'); 
+const previousButtonEl = document.querySelector('.previousButton'); 
+const NextButtonEl = document.querySelector('.nextButton'); 
+const paginationLimit = 5;
+const pageCount = Math.ceil(jobList.length / paginationLimit);
+let currentPage;
 
 //Search for jobs and display only searched jobs
 //get job data from API
@@ -298,6 +305,99 @@ const sortRecentJobs = async () => {
 }
 
 sortRecentButtonEl.addEventListener('click', sortRecentJobs)
+
+//Add new page number: We can construct a method to create a new button for the page number now that we know how many pages we'll need, and then add the buttons to the paginationNumbers container.
+const appendPageNumber = (index) => {
+    const pageNumber = document.createElement("button");
+    pageNumber.className = "paginationNumber";
+    pageNumber.innerHTML = index;
+    pageNumber.setAttribute("pageIndex", index);
+    // pageNumber.setAttribute("aria-label", "Page " + index);
+    paginationNumbers.appendChild(pageNumber);
+};
+
+const getPaginationNumbers = () => {
+for (let i = 1; i <= pageCount; i++) {
+    appendPageNumber(i);
+}
+};
+
+
+
+//display active pages
+const setCurrentPage = async (pageNum) => {
+    currentPage = pageNum;
+
+    // handleActivePageNumber();
+    // handlePageButtonsStatus();
+    
+    //ensure only pagination limit number displays
+    const previousRange = (pageNum - 1) * paginationLimit;
+    const currentRange = pageNum * paginationLimit;
+
+    //return only jobs of pagination limit
+    const jobs = await getJobs();
+
+    let jobDisplay = jobs.jobItems.forEach((job, index) => {
+        // job.classList.add('hidden');
+        jobList.innerHTML = "";
+        if(index >= previousRange && index < currentRange){
+            console.log(job); 
+            const htmlMarkup =
+                ` 
+                <li class="jobList__jobs--jobItem" id="${job.id}">
+                    <a href="${job.id}" class="jobItem__link--id">
+                        <span class="jobItem__badge">
+                            ${job.badgeLetters}
+                        </span>
+                        <div class="jobItem__details">
+                            <span class="jobItem__title">
+                                ${job.title}
+                            </span>
+                            <span class="jobItem__company">
+                                ${job.company}
+                            </span>
+                            <div class="jobItem__specs">
+                                <span class="jobItem__specs--duration">
+                                    <i class="fa-solid fa-clock jobItem__specs--durationIcon"></i>
+                                    ${job.duration}
+                                </span>
+                                <span class="jobItem__specs--salary">
+                                    <i class="fa-solid fa-money-bill jobItem__specs--salaryIcon"></i>
+                                    ${job.salary}
+                                </span>
+                                <span class="jobItem__specs--location">
+                                    <i class="fa-solid fa-location-dot jobItem__specs--locationIcon"></i>
+                                    ${job.Global}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="jobItem__post">
+                            <span class="jobItem__post--bookmark">
+                                <i class="fa-solid fa-bookmark jobItem__post--bookmarkIcon"></i>
+                            </span>
+                            <span class="jobItem__post--daysAgo">
+                                ${job.daysAgo}
+                            </span>
+                        </div>
+                    </a>
+                </li>`;
+            jobList.insertAdjacentHTML('afterend', htmlMarkup);
+            // jobList.innerHTML = htmlMarkup;
+            return job 
+        }   
+    }) 
+};
+
+  
+
+// call the getPaginationNumbers function when the web page loads using the window.load() event
+window.addEventListener("load", () => {
+    getPaginationNumbers();
+    setCurrentPage(1);
+
+});
+  
 
 
 // jobListItem.addEventListener('click', function(event) {
