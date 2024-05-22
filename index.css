@@ -128,13 +128,18 @@ body{
 
 }
 
-.jobList__jobs--jobItem{
+.jobItem__link--id{
+    all: unset;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding-bottom: 15px;
     padding-top: 15px;
     box-shadow: 0 0px 1.5px rgba(0,0,0,0.1);
+}
+
+.jobList__jobs--jobItem{
+    
 }
 
 /* Job item details begin */
@@ -244,7 +249,10 @@ body{
 }
 
 .jobDetails__default{
-    display: none;
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .jobDetails__defaultHeading{
